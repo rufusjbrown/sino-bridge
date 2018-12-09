@@ -1,22 +1,22 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
+      <img src="/suzhoujinjilake.png" alt="">
       <h1 class="title">
-        sino-bridge
+        Teach in China
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        Some more text here 
       </h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
+          class="button--green">Search</a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey">Contact</a>
       </div>
     </div>
   </section>
