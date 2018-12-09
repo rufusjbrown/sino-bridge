@@ -16,11 +16,11 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item">
-                    Home
+                    <nuxt-link to="/">Home</nuxt-link>
                 </a>
 
                 <a class="navbar-item">
-                    Documentation
+                    <nuxt-link to="/contact">Search Opportunities</nuxt-link>                    
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">

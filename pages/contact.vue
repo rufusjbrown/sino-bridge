@@ -1,37 +1,63 @@
 <template>
-    <div class="container is-fluid">
-    <section>
-        <b-field label="Name">
-            <b-input value="Kevin Garvey"></b-input>
-        </b-field>
-
-        <b-field label="Email"
-            type="is-danger"
-            message="This email is invalid">
-            <b-input type="email"
-                value="john@"
-                maxlength="30">
+    <section class="container">
+        <b-field>
+            <b-input placeholder="Name"
+                icon="account">
             </b-input>
         </b-field>
 
-        <b-field label="Username"
-            type="is-success"
-            message="This username is available">
-            <b-input value="johnsilver" maxlength="30"></b-input>
+        <b-field>
+            <b-input placeholder="Email"
+                type="email"
+                icon="email">
+            </b-input>
         </b-field>
 
-        <b-field label="Password"
-            type="is-warning"
-            :message="['Password is too short', 'Password must have at least 8 characters']">
-            <b-input value="123" type="password" maxlength="30"></b-input>
-        </b-field>
-
-        <b-field label="Subject">
-            <b-select placeholder="Select a subject">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+        <b-field label="Experience">
+            <b-select placeholder="Select">
+                <option value="0">0 Years</option>
+                <option value="1">0 - 1 Years</option>
+                <option value="2">1 - 2 Years</option>
+                <option value="3">2 - 5 Years</option>
+                <option value="4">5+ Years</option>
             </b-select>
         </b-field>
+
+        <b-field label="Subjects">
+            <b-taginput
+                v-model="tags"
+                :data="filteredTags"
+                autocomplete
+                :allow-new="allowNew"
+                icon="label"
+                placeholder="Add a tag"
+                @typing="getFilteredTags">
+            </b-taginput>
+        </b-field>
     </section>
-    </div>
 </template>
+
+<script>
+    const data = ['English', 'Mathematics', 'Physics']//require('@/data/sample.json')
+
+    export default {
+        data() {
+            return {
+                filteredTags: data,
+                isSelectOnly: false,
+                tags: [],
+                allowNew: false,                
+            }
+        },
+        methods: {
+            getFilteredTags(text) {
+                this.filteredTags = data.filter((option) => {
+                    return option
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(text.toLowerCase()) >= 0
+                })
+            }
+        }
+    }
+</script>
