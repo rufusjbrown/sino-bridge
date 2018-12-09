@@ -34,6 +34,11 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  modules: [
+    // simple usage
+    'nuxt-buefy',
+  ]
 }
 
